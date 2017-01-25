@@ -20,7 +20,7 @@
 # The purpose of this script is to work around JACK and NINJA, which have been
 # broken in AOSP as of android-7.0.
 #
-# Usage: ./build.sh <DEVICE>
+# Usage: ./NougatBuild.sh <DEVICE>
 #
 
 DEVICE="$1"
