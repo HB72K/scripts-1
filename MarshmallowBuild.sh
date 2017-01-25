@@ -15,7 +15,7 @@ export KBUILD_BUILD_USER="CarlosArriaga"
 export KBUILD_BUILD_HOST="EroticHost"
 
 # Set CCACHE
-rm -rvf /../.ccache
+rm -rvf ../.ccache
 prebuilts/misc/linux-x86/ccache/ccache -M 50G
 
 # Compile the build
