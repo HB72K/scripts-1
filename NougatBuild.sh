@@ -41,6 +41,7 @@ export ANDROID_JACK_VM_ARGS="-Xmx12g -Dfile.encoding=UTF-8 -XX:+TieredCompilatio
 ./prebuilts/sdk/tools/jack-admin start-server
 
 # Set CCACHE
+rm -rvf ../.ccache
 prebuilts/misc/linux-x86/ccache/ccache -M 50G
 
 # Make a clean build, building dirty after you have had jack issues may result in a failed build
