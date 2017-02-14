@@ -34,7 +34,7 @@ export KBUILD_BUILD_HOST="EroticHost"
 rm -rf ~/.jack*
 
 # Resize the JACK Heap size
-export ANDROID_JACK_VM_ARGS="-Xmx14g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
+export ANDROID_JACK_VM_ARGS="-Xmx10g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
 
 # Restart the JACK server
 ./prebuilts/sdk/tools/jack-admin kill-server
