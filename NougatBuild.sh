@@ -34,7 +34,7 @@ export KBUILD_BUILD_HOST="EroticHost"
 rm -rf ~/.jack*
 
 # Resize the JACK Heap size
-export ANDROID_JACK_VM_ARGS="-Xmx3g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
+export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -Xmx8g"
 
 # Restart the JACK server
 ./prebuilts/sdk/tools/jack-admin kill-server
@@ -42,10 +42,10 @@ export ANDROID_JACK_VM_ARGS="-Xmx3g -Dfile.encoding=UTF-8 -XX:+TieredCompilation
 
 # Set CCACHE
 rm -rvf ../.ccache
-prebuilts/misc/linux-x86/ccache/ccache -M 80G
+prebuilts/misc/linux-x86/ccache/ccache -M 30G
 
 # Make a clean build, building dirty after you have had jack issues may result in a failed build
-make clean
+make clean && make clobber
 
 # Compile the build
 . build/envsetup.sh
