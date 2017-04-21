@@ -25,24 +25,42 @@
 
 DEVICE="$1"
 
-# Export NINJA, USER AND HOST NAME
-export USE_NINJA=false
+# Export USER AND HOST NAME
 export KBUILD_BUILD_USER="CarlosArriaga"
 export KBUILD_BUILD_HOST="EroticHost"
 
-# Delete the JACK server located in /home/<USER>/.jack*
-rm -rf ~/.jack*
+#
+# FUCK JACK
+# Use with Android 7.X
+#
 
-# Resize the JACK Heap size
-export ANDROID_JACK_VM_ARGS="-Xmx8g -Dfile.encoding=UTF-8 -XX:+TieredCompilation"
+# Kill the Jack server
+  printf "Fuck Jack...\n\n"
+  sleep 1
+  ./prebuilts/sdk/tools/jack-admin kill-server
+  rm -rf ~/.jack*
 
-# Restart the JACK server
-./prebuilts/sdk/tools/jack-admin kill-server
+# IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT!
+#
+# Replace the value in the first of "ANDROID_JACK_VM_ARGS" with half of your RAM
+# (i.e.: if you have 8GB of ram, use "-Xmx4g")
+#
+  export ANDROID_JACK_VM_ARGS="-Xmx4g -XX:+TieredCompilation -Dfile.encoding=UTF-8"
+#
+# IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT! IMPORTANT!
+
+  export SERVER_NB_COMPILE=2
+  export ANDROID_JACK_VM_ARGS=$JACK_SERVER_VM_ARGUMENT
+
+# You may need to uncomment the following command if Java tells you to use it.
+#  ulimit -n unlimited
+
+  ./prebuilts/sdk/tools/jack-admin install-server prebuilts/sdk/tools/jack-launcher.jar prebuilts/sdk/tools/jack-server-4.8.ALPHA.jar
 ./prebuilts/sdk/tools/jack-admin start-server
 
 # Set CCACHE
 rm -rvf ../.ccache
-prebuilts/misc/linux-x86/ccache/ccache -M 80G
+prebuilts/misc/linux-x86/ccache/ccache -M 20G
 
 # Make a clean build, building dirty after you have had jack issues may result in a failed build
 make clean
