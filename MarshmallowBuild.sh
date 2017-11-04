@@ -8,16 +8,18 @@
 DEVICE="$1"
 
 # Make a clean build, building dirty after you have had jack issues may result in a failed build
-make clean
+make clean && make clobber
 
 # Set USER AND HOST NAME
 export KBUILD_BUILD_USER="CarlosArriaga"
-export KBUILD_BUILD_HOST="EroticHost"
+export KBUILD_BUILD_HOST="DonatePaypal"
 
 # Set CCACHE
-rm -rvf ../.ccache
+export USE_CCACHE=1
+export CCACHE_DIR=/home/carlos/ccache
 prebuilts/misc/linux-x86/ccache/ccache -M 50G
 
 # Compile the build
 . build/envsetup.sh
-brunch $DEVICE
+lunch lineage_$DEVICE-userdebug
+make bacon -j8
