@@ -28,8 +28,4 @@ cd ../.. &&
 
 cd bionic &&
 git fetch https://github.com/LineageOS/android_bionic refs/changes/21/198621/2 && git cherry-pick FETCH_HEAD &&
-cd .. &&
-
-cd external/ntfs-3g &&
-git fetch https://github.com/LineageOS/android_external_ntfs-3g refs/changes/28/198028/1 && git cherry-pick FETCH_HEAD &&
-cd ../..
+cd ..
