@@ -1,11 +1,3 @@
-cd frameworks/av &&
-git fetch https://github.com/LineageOS/android_frameworks_av refs/changes/76/194976/1 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_frameworks_av refs/changes/15/198115/1 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_frameworks_av refs/changes/14/198114/1 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_frameworks_av refs/changes/13/198113/1 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_frameworks_av refs/changes/16/198116/1 && git cherry-pick FETCH_HEAD &&
-cd ../.. &&
-
 cd system/qcom &&
 git fetch https://github.com/LineageOS/android_system_qcom refs/changes/34/187634/1 && git cherry-pick FETCH_HEAD &&
 git fetch https://github.com/LineageOS/android_system_qcom refs/changes/35/187635/1 && git cherry-pick FETCH_HEAD &&
