@@ -30,17 +30,6 @@ cd ../.. &&
 echo "Patches for bionic...";
 cd bionic &&
 git fetch https://github.com/LineageOS/android_bionic refs/changes/21/198621/2 && git cherry-pick FETCH_HEAD &&
-cd .. &&
-
-echo "Patches for hardware_qcom_keymaster...";
-cd hardware/qcom/keymaster &&
-git fetch https://github.com/LineageOS/android_hardware_qcom_keymaster refs/changes/93/198793/2 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_hardware_qcom_keymaster refs/changes/71/199371/1 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_hardware_qcom_keymaster refs/changes/72/199372/1 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_hardware_qcom_keymaster refs/changes/73/199373/1 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_hardware_qcom_keymaster refs/changes/74/199374/1 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_hardware_qcom_keymaster refs/changes/75/199375/1 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_hardware_qcom_keymaster refs/changes/76/199376/1 && git cherry-pick FETCH_HEAD &&
-cd ../../..
+cd ..
 
 echo "Finished! now you can build bro :D";
