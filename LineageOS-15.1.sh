@@ -32,4 +32,9 @@ cd bionic &&
 git fetch https://github.com/LineageOS/android_bionic refs/changes/21/198621/2 && git cherry-pick FETCH_HEAD &&
 cd ..
 
+echo "Patches for external_nano...";
+cd external/nano &&
+git fetch https://github.com/LineageOS/android_external_nano refs/changes/11/200111/1 && git cherry-pick FETCH_HEAD &&
+cd ../..
+
 echo "Finished! now you can build bro :D";
