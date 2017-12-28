@@ -43,11 +43,4 @@ git fetch https://github.com/LineageOS/android_hardware_qcom_keymaster refs/chan
 git fetch https://github.com/LineageOS/android_hardware_qcom_keymaster refs/changes/76/199376/1 && git cherry-pick FETCH_HEAD &&
 cd ../../..
 
-echo "Patches for hardware_qcom_audio...";
-cd hardware/qcom/audio-caf/msm8974 &&
-git fetch https://github.com/LineageOS/android_hardware_qcom_audio refs/changes/14/199514/4 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_hardware_qcom_audio refs/changes/53/199553/3 && git cherry-pick FETCH_HEAD &&
-git fetch https://github.com/LineageOS/android_hardware_qcom_audio refs/changes/83/199983/1 && git cherry-pick FETCH_HEAD &&
-cd ../../../..
-
 echo "Finished! now you can build bro :D";
