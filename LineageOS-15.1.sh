@@ -30,11 +30,18 @@ cd ../.. &&
 echo "Patches for bionic...";
 cd bionic &&
 git fetch https://github.com/LineageOS/android_bionic refs/changes/21/198621/2 && git cherry-pick FETCH_HEAD &&
-cd ..
+cd .. &&
 
-echo "Patches for external_nano...";
-cd external/nano &&
-git fetch https://github.com/LineageOS/android_external_nano refs/changes/11/200111/1 && git cherry-pick FETCH_HEAD &&
-cd ../..
+echo "Patches for hardware_qcom_media...";
+cd hardware/qcom/media-caf &&
+rm -rf msm8916 &&
+git clone https://github.com/CarlosArriagaCM/android_hardware_qcom_media.git -b staging/lineage-15.1-caf-8916 msm8916 &&
+cd .. &&
+
+echo "Patches for hardware_qcom_audio...";
+cd audio-caf &&
+rm -rf msm8916 &&
+git clone https://github.com/CarlosArriagaCM/android_hardware_qcom_audio.git -b staging/lineage-15.1-caf-8916 msm8916 &&
+cd ../../..
 
 echo "Finished! now you can build bro :D";
