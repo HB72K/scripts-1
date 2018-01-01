@@ -36,12 +36,6 @@ echo "Patches for hardware_qcom_media...";
 cd hardware/qcom/media-caf &&
 rm -rf msm8916 &&
 git clone https://github.com/CarlosArriagaCM/android_hardware_qcom_media.git -b staging/lineage-15.1-caf-8916 msm8916 &&
-cd .. &&
-
-echo "Patches for hardware_qcom_audio...";
-cd audio-caf &&
-rm -rf msm8916 &&
-git clone https://github.com/CarlosArriagaCM/android_hardware_qcom_audio.git -b staging/lineage-15.1-caf-8916 msm8916 &&
-cd ../../..
+cd ..
 
 echo "Finished! now you can build bro :D";
