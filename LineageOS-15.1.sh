@@ -18,7 +18,6 @@ cd ../.. &&
 
 echo "Patches for system_core...";
 cd system/core &&
-git fetch https://github.com/LineageOS/android_system_core refs/changes/11/198411/1 && git cherry-pick FETCH_HEAD &&
 git fetch https://github.com/LineageOS/android_system_core refs/changes/55/198955/1 && git cherry-pick FETCH_HEAD &&
 cd ../.. &&
 
