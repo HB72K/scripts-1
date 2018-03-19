@@ -23,12 +23,9 @@
 # Usage: ./NougatBuild.sh <DEVICE>
 #
 
-DEVICE="$1"
 
 # Export NINJA, USER AND HOST NAME
 export USE_NINJA=false
-export KBUILD_BUILD_USER="CarlosArriaga"
-export KBUILD_BUILD_HOST="EroticHost"
 
 # Delete the JACK server located in /home/<USER>/.jack*
 rm -rf ~/.jack*
@@ -42,11 +39,10 @@ export JACK_SERVER_VM_ARGUMENTS="-Dfile.encoding=UTF-8 -XX:+TieredCompilation -X
 
 # Set CCACHE
 rm -rvf ../.ccache
-prebuilts/misc/linux-x86/ccache/ccache -M 30G
+prebuilts/misc/linux-x86/ccache/ccache -M 80G
 
 # Make a clean build, building dirty after you have had jack issues may result in a failed build
 make clean && make clobber
 
 # Compile the build
-. build/envsetup.sh
-brunch $DEVICE
+. build/envsetup.sh && brunch cherry
